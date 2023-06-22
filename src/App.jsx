@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ChatContainer from './components/ChatContainer';
 import AppNavbar from './components/AppNavbar';
 import { useState, useEffect } from 'react';
+import Instructions from './components/instructions';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
       <div className='main-container '>
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>
+        <Instructions/>
         <div className='tasks-container'></div>
         <div className='saved-container'></div>
         <div className='recipe-container'></div>

@@ -28,7 +28,7 @@ const ChatContainer = ({ onSendChat, animation}) => {
         <input
           type="text"
           className="text-white"
-          placeholder="Send a message."
+          placeholder={"Send a message."}
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleInputKeyDown}

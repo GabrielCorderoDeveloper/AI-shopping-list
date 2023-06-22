@@ -1,0 +1,22 @@
+.hidden {
+    display: none;
+}
+
+.info-container {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    width: 350px;
+    margin: auto;
+    position: relative;
+}
+
+.info-container svg{
+    width: 30px;
+    height: 30px;
+}
+
+.info-container .delete{
+    position: absolute;
+    right: 0;
+} 
