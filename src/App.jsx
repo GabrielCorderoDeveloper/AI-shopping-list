@@ -2,12 +2,14 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Animation from './components/Animation';
 import Footer from './components/Footer';
-import { useState, useEffect } from 'react';
+import ChatContainer from './components/ChatContainer';
 import AppNavbar from './components/AppNavbar';
+import { useState, useEffect } from 'react';
 
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
+  const [animation, setAnimation] = useState(false);
 
     // After 2.5S the animation component will not be showed
     useEffect(() => {
@@ -16,20 +18,23 @@ function App() {
       }, 2600);
   }, []);
 
-  // ps-md-5 pe-md-5 pt-md-5
+  const handleSendChat = () => {
+    
+  };
+
   return (
     <>
       <AppNavbar/>
-      <div className='main-container '>
         {/* {showComponent && <Animation />} */}
 
-        <div className='chat-container'></div>
+      <div className='main-container '>
+        <ChatContainer onSendChat={handleSendChat} animation={animation}/>
         <div className='tasks-container'></div>
         <div className='saved-container'></div>
         <div className='recipe-container'></div>
+      </div>
 
         <Footer />
-      </div>
     </>
   )
 }
