@@ -21,7 +21,7 @@ function App() {
     <>
       <AppNavbar/>
       <div className='main-container '>
-        {/* {showComponent && <Animation />} */}
+        {showComponent && <Animation />}
 
         <div className='chat-container'></div>
         <div className='tasks-container'></div>

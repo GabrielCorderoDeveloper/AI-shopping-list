@@ -2,7 +2,6 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
 }
 .nav-spacing {
     padding: 0 5%;
@@ -12,6 +11,7 @@ header {
     height: 45px;
     padding: 2px;
     transform: translateY(4px);
+    animation: shake 2s 2.2s ease-in-out;
 }
 header {
     background-color: var(--white);
@@ -64,4 +64,13 @@ header {
         height: 35px;
         transform: translateX(-1px);
     }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) translateY(4px); }
+    10% { transform: translateX(-5px) translateY(4px); }
+    20% { transform: translateX(5px) translateY(4px); }
+    30% { transform: translateX(-5px) translateY(4px); }
+    40% { transform: translateX(5px) translateY(4px); }
+    50% { transform: translateX(0px) translateY(4px); }
 }
