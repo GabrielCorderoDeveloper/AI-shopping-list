@@ -14,15 +14,8 @@ const Footer = () => {
 
     //Default styling for all the icons.
     const style = {
-        fontSize: windowWidth < 400 ? "40px" : "50px",
+        fontSize: "25px"
     }
-
-    ///If the width of the page changes the icon size will to.
-    useEffect(() => {
-      const handleResize = () => setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
     /*///These links will be used on each icon to open a new tab with the indicated link
     if clicked. */
@@ -35,12 +28,17 @@ const Footer = () => {
     <>
         <div className='footer pt-4'>
             <div className='d-flex justify-content-around'>
-                <a className='my-auto' onClick={handleShowModal}
-                >About<span className='ps-2 about-icon'><AiFillInfoCircle/></span></a>
         
-                <div className='social'>
-                   { windowWidth > 600 ? <a target="_blank" href={links.instagram}><AiOutlineInstagram style={style}/></a> : "" }
-                    <a target="_blank" href={links.linkedin}><AiFillLinkedin style={style}/></a>
+                <div className='social d-flex flex-row pb-3'>
+
+                  <a target="_blank" href={links.instagram}
+                  >Instagram<span className='ps-2 about-icon'><AiOutlineInstagram style={style}/></span></a>
+
+                  <a target="_blank" href={links.linkedin}
+                  >Linkedin<span className='ps-2 about-icon'><AiFillLinkedin style={style}/></span></a>
+
+                  <a className='' onClick={handleShowModal}
+                  >About<span className='ps-2 about-icon'><AiFillInfoCircle/></span></a>
                 </div>
             </div>
             <p className='text-center pt-1'>AI Shopping List by Gabriel Cordero 2023</p>

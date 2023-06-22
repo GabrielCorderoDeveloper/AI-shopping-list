@@ -7,46 +7,53 @@
 }
 .footer > p {
     color: var(--white);
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 .footer a {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
     color: var(--white);
     text-decoration: none;
     transition: 0.2s;
 }
 .footer a:hover {
-    font-size: 2.4rem;
     color: var(--main-color);
     text-decoration: underline;
 }
-
+.social a {
+    padding: 0 70px;
+}
 .social a svg {
     transition: 0.3s;
     color: var(--white);
-    margin: 0 10px;
 }
 .social a:hover svg {
     color: var(--main-color);
-    transform: rotate(10deg);
+    transform: rotate(15deg) translateY(-2px);
 }
 
 .about-icon svg{
     transform: translateY(-2px);
 }
-
+/*~ Tablet variant <-----------------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .social a {
+        padding: 0 40px;
+    }
+}
 
 /*~ Phone variant <-----------------------------------------------------------------------*/
 @media (max-width: 600px) {
-    .footer > p {
-        font-size: 1.4rem;
+    .social a {
+        padding: 0 20px;
     }
 
-    .social a svg {
-        transform: translateY(-4px);
+    .footer > p {
+        font-weight: normal;
     }
 
     .footer a {
-        transform: translateY(-4px);
+        font-weight: normal;
     }
 }
