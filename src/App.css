@@ -4,12 +4,30 @@
   padding: 0;
   box-sizing: border-box;
 } 
-
 html {
   font-size: 62.5%; /*1? Each rem is equal to 10px*/
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+}
+
+/*1? Custom colors */ /*The colors are also impremented on bootstrap*/
+:root {
+  --white: #FFFFFF;
+
+  --gray: #777777;
+  --light-black: #323232;
+
+  --main-color: #FFA34E;
+  --secondary-color: #DEDAD1;
+  --cool-orange: #E85130;
+
+}
+
+.chat-container {
+  width: 400px;
+  height: 200px;
+  background-color: black;
 }

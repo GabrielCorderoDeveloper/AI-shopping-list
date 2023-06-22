@@ -1,0 +1,67 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+.nav-spacing {
+    padding: 0 5%;
+}
+.profile-img {
+    width: 45px;
+    height: 45px;
+    padding: 2px;
+    transform: translateY(4px);
+}
+header {
+    background-color: var(--white);
+}
+.FiMenu{ /*//1? This is the hambuer menu*/
+    margin-top: 5px;
+}
+.nav-item {
+    font-size: 2rem;
+    transform: translateY(3px);
+}
+.nav-link {
+    color: var(--light-black)!important;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 1.6rem;
+}
+.nav-link:hover {
+    color: var(--cool-orange)!important;
+    text-decoration: underline;
+
+}
+.nav-item.collapsed {
+    padding-top: 8px;
+    padding-bottom: 4px;
+    border-top: 4px solid var(--light-black);
+    text-align: center;
+}
+.cursor-pointer {
+    cursor: pointer;
+  }
+
+
+/*~ Small Phone variant <-----------------------------------------------------------------------*/
+@media (max-width: 400px) {
+    .c-name {
+        font-size: 2.2rem;
+        transform: translateY(1px);
+    }
+    header svg.arrow {
+        transform: translateY(-4px);
+    }
+    
+    .profile-bg {
+        width: 35px;
+        height: 35px;
+    }
+    .profile-bg > img {
+        width: 35px;
+        height: 35px;
+        transform: translateX(-1px);
+    }
+}

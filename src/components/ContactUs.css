@@ -1,0 +1,45 @@
+.modal {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 2.2rem; /* 22px */
+  }
+  div.modal-header {
+    background-color: var(--medium-blue);
+    color: var(--clear-white);
+  }
+  div.modal-title {
+    font-size: 2rem; /* 20px */
+    font-weight: bold;
+  }
+  div.modal-body {
+    padding: 0 30px 30px 30px;
+  }
+  button.btn-close { /*Styling for the close button*/
+    background-color: var(--clear-white);
+    opacity: 1;
+  }
+  div.modal-body > p {
+    line-height: 100%;
+    margin-top: 30px;
+  }
+  .modal-link {
+    color: var(--medium-blue);
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .modal-link:hover {
+    color: var(--light-blue);
+    font-weight: bold;
+  }
+  .minus {
+    margin-bottom: -10px;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 2.2rem; /* 20px */
+  }
+  textarea.form-control {
+    resize: none;
+  }
+  button.contact {
+    font-size: 2rem;
+  }
