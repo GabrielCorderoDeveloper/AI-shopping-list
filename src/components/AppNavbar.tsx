@@ -48,7 +48,7 @@ const AppNavbar = () => {
               <Nav.Link className='ps-5 pe-5 nav-link' onClick={handleShowContact}>Contact Us</Nav.Link>
             </div>
             <div className={`nav-item${isCollapsed ? ' collapsed' : ''}`}>
-              <Nav.Link className='ps-5 pe-5 nav-link' href='' target='about_blank'>Linkedin</Nav.Link>
+              <Nav.Link className='ps-5 pe-5 nav-link' href='https://www.linkedin.com/in/gabriel-cordero-0960b9244/' target="_blank">Linkedin</Nav.Link>
             </div>
           </Nav>
         </Navbar.Collapse>

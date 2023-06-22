@@ -147,10 +147,10 @@ const ContactUs = ({ showContact, handleCloseContact }) => {
 
           <button
             type="submit"
-            className="contact btn btn-lg btn-primary mt-4 px-5 pt-2 pb-0 rounded-5 font-weight-bold"
+            className="contact btn btn-lg px-5 pt-2 pb-0 mt-4 rounded-5 font-weight-bold"
             disabled={!validateForm()}
           >
-            {submiting ? "Submiting..." : "Submit"}
+            <p>{submiting ? "Submiting..." : "Submit"}</p>
           </button>
         </form>
       </Modal.Body>

@@ -4,8 +4,9 @@
     font-size: 2.2rem; /* 22px */
   }
   div.modal-header {
-    background-color: var(--medium-blue);
-    color: var(--clear-white);
+    background-color: var(--main-color);
+    color: var(--white);
+    
   }
   div.modal-title {
     font-size: 2rem; /* 20px */
@@ -15,21 +16,12 @@
     padding: 0 30px 30px 30px;
   }
   button.btn-close { /*Styling for the close button*/
-    background-color: var(--clear-white);
+    background-color: var(--white);
     opacity: 1;
   }
   div.modal-body > p {
     line-height: 100%;
     margin-top: 30px;
-  }
-  .modal-link {
-    color: var(--medium-blue);
-    font-weight: bold;
-    transition: 0.2s;
-  }
-  .modal-link:hover {
-    color: var(--light-blue);
-    font-weight: bold;
   }
   .minus {
     margin-bottom: -10px;
@@ -42,4 +34,11 @@
   }
   button.contact {
     font-size: 2rem;
+    background-color: var(--cool-orange) !important;
+    border: none;
+  }
+  button.contact > p {
+    color: white;
+    font-weight: bold;
+    transform: translateY(1px);
   }
