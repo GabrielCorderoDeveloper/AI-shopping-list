@@ -16,6 +16,28 @@ function App() {
   const [animation, setAnimation] = useState(false);
   const [recipeAnimation, setRecipeAnimation] = useState(false);
 
+  const [todos, setTodos] = useState([{
+    id: 1, name: 'Follow Gabriel_coder47 on instagram📷', complete: false
+  }]);
+
+  function toggleTodo(id) {
+    const newTodos = [...todos]
+    const todo = newTodos.find(todo => todo.id === id)
+    todo.complete =! todo.complete
+    setTodos(newTodos)
+  }
+
+  //It will erase the todos that are completed
+  function clearTodos() {
+    const newTodos = todos.filter(todo => !todo.complete)
+    setTodos(newTodos)
+  }
+
+  // function idGenerator() {
+  //   const id = Math.floor(Math.random() * 10000)
+  //   return id
+  // }
+
     // After 2.5S the animation component will not be showed
     useEffect(() => {
       setTimeout(() => {
@@ -24,7 +46,6 @@ function App() {
   }, []);
 
   const handleSendChat = () => {
-    
   };
 
   return (
@@ -36,7 +57,7 @@ function App() {
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>
         <Instructions/>
 
-        <TasksContainer/>
+        <TasksContainer todos={todos} toggleTodo={toggleTodo} clearTodos={clearTodos}/>
         <SavedContainer/>
         <RecipeContainer recipeAnimation={recipeAnimation}/>
 

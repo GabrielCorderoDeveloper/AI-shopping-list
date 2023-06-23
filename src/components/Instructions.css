@@ -16,6 +16,11 @@
     height: 30px;
 }
 
+.delete:hover{
+    color: var(--cool-orange);
+    transition: 0.3s;
+}
+
 .info-container .delete{
     position: absolute;
     right: 0;

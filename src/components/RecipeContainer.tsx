@@ -12,7 +12,7 @@ const RecipeContainer = ({ recipeAnimation }) => {
             <div></div>
         </div>
         <div className='recipe-container mt-1 mb-5'>
-        <p className='text-center mt-2'>Recipe</p>
+        <p className='text-center mt-2 mb-4'>Recipe</p>
         <hr />
 
             <p className='mt-2 pb-2 body-p'>Certainly! Here's a step-by-step recipe for a sandwich using bread, cheddar cheese, and jam:
