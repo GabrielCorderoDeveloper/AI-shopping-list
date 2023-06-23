@@ -1,7 +1,7 @@
 import React from 'react';
 import './TasksContainer.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { GrFormClose } from "react-icons/gr";
+import { BsTrash } from "react-icons/bs";
 
 const Todo = ({ todo, toggleTodo }) => {
   function handleTodoClick() {
@@ -20,6 +20,7 @@ const Todo = ({ todo, toggleTodo }) => {
         />
         <span className='todo-text'>{todo.name}</span>
       </label>
+      <hr className='todo-hr'/>
     </div>
   );
 };
@@ -38,23 +39,29 @@ const TaskCounter = ({ todos }) => {
   // La barra de progreso mostrará cuántas tareas has completado
   return (
     <ProgressBar
-      variant='success'
-      style={{ height: '30px' }}
+      variant='mainColor'
+      style={{ height: '15px' }}
       now={now}
-      label={`${completedTasks} of ${totalTasks} tasks completed`}
+      label={`${completedTasks}/${totalTasks}`}
       valuemin={0}
       valuemax={100}
-      className='my-2 col-md-7'
+      className='my-4 progress-bar-inside'
     />
   );
 };
 
 // Este es el botón para eliminar las tareas marcadas
-const RemoveChecked = ({ clearTodos }) => {
+const Buttons = ({ clearTodos }) => {
   return (
-    <button className='btn btn-outline-success mt-md-0 mt-2' onClick={clearTodos}>
-      Remove checked<GrFormClose size="25px" className='icon-fix' />
-    </button>
+    <div className='mt-5 mb-4 d-flex justify-content-between'>
+      <div className='ms-3 remove' onClick={clearTodos}>
+        <BsTrash size="25px" />
+      </div>
+
+      <button className='me-3 save-button' onClick={clearTodos}>
+        Save this list
+      </button>
+    </div>
   );
 };
 
@@ -62,9 +69,12 @@ const RemoveChecked = ({ clearTodos }) => {
 const TasksContainer = ({ todos, toggleTodo, clearTodos }) => {
   return (
     <div className='task-container mb-md-5 mb-4'>
-      <TaskCounter todos={todos}/> 
+      <div className='task-counter'>
+        <TaskCounter todos={todos}/> 
+      </div>
+
       <TaskList todos={todos} toggleTodo={toggleTodo} />
-      <RemoveChecked clearTodos={clearTodos} />
+      <Buttons clearTodos={clearTodos} />
     </div>
   );
 };

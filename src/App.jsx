@@ -10,14 +10,16 @@ import TasksContainer from './components/TasksContainer';
 import SavedContainer from './components/SavedContainer';
 import RecipeContainer from './components/RecipeContainer';
 
-
 function App() {
   const [showComponent, setShowComponent] = useState(true);
   const [animation, setAnimation] = useState(false);
   const [recipeAnimation, setRecipeAnimation] = useState(false);
 
   const [todos, setTodos] = useState([{
-    id: 1, name: 'Follow Gabriel_coder47 on instagram📷', complete: false
+    id: 1, name: 'Follow Gabriel_coder47 on instagram', complete: false
+  },
+  {
+    id: 2, name: 'Follow Gabriel_coder47 on instagram', complete: false
   }]);
 
   function toggleTodo(id) {
@@ -32,11 +34,6 @@ function App() {
     const newTodos = todos.filter(todo => !todo.complete)
     setTodos(newTodos)
   }
-
-  // function idGenerator() {
-  //   const id = Math.floor(Math.random() * 10000)
-  //   return id
-  // }
 
     // After 2.5S the animation component will not be showed
     useEffect(() => {
