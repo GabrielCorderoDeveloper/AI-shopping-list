@@ -96,7 +96,7 @@ const ContactUs = ({ showContact, handleCloseContact }) => {
     >
       <Modal.Header className="contact" closeButton>
         <Modal.Title className="contact">
-          Contact Us
+          <span className='ps-4'>Contact Us</span>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="contact">
