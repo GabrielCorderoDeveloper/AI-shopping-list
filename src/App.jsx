@@ -14,6 +14,7 @@ import RecipeContainer from './components/RecipeContainer';
 function App() {
   const [showComponent, setShowComponent] = useState(true);
   const [animation, setAnimation] = useState(false);
+  const [recipeAnimation, setRecipeAnimation] = useState(false);
 
     // After 2.5S the animation component will not be showed
     useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
 
         <TasksContainer/>
         <SavedContainer/>
-        <RecipeContainer/>
+        <RecipeContainer recipeAnimation={recipeAnimation}/>
 
         <div className='bottom-spacing'></div>
       </div>

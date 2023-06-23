@@ -14,7 +14,7 @@ const Footer = () => {
 
     //Default styling for all the icons.
     const style = {
-        fontSize: "25px"
+        fontSize: "20px",
     }
 
     /*///These links will be used on each icon to open a new tab with the indicated link
@@ -31,11 +31,11 @@ const Footer = () => {
         
                 <div className='social d-flex flex-row pb-3'>
 
-                  <a target="_blank" href={links.instagram}
-                  >Instagram<span className='ps-2 about-icon'><AiOutlineInstagram style={style}/></span></a>
-
                   <a target="_blank" href={links.linkedin}
                   >Linkedin<span className='ps-2 about-icon'><AiFillLinkedin style={style}/></span></a>
+
+                  <a target="_blank" href={links.instagram}
+                  >Instagram<span className='ps-2 about-icon'><AiOutlineInstagram style={style}/></span></a>
 
                   <a className='' onClick={handleShowModal}
                   >About<span className='ps-2 about-icon'><AiFillInfoCircle/></span></a>

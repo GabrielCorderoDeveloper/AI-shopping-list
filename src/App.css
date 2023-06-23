@@ -19,6 +19,9 @@ html {
   --secondary-color: #DEDAD1;
   --cool-orange: #E85130;
 }
+a {
+  user-select: none;
+}
 
 .main-container {
   display: flex;

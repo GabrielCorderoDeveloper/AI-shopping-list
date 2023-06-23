@@ -3,7 +3,7 @@ import './SavedContainer.css';
 
 const SavedContainer = () => {
   return (
-    <div className='saved-container mb-md-5 mb-4'>
+    <div className='saved-container mt-5 mb-4'>
       
     </div>
   )
