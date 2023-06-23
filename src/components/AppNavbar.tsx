@@ -27,7 +27,7 @@ const AppNavbar = () => {
       
   return (
       <header>
-        <Navbar className='d-flex flex-row-reverse justify-content-between nav-bar up-animation nav-spacing'
+        <Navbar className='d-flex flex-row-reverse justify-content-between nav-bar up-animation nav-spacing pb-2'
         expand="sm" collapseOnSelect>
         <Navbar.Brand>
           <div className='d-flex flex-row cursor-pointer' onClick={handleShowModal} >
