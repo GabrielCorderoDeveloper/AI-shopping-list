@@ -3,7 +3,7 @@
     position: relative;
 }
 .chat-input > input{
-    width: 70%;
+    width: 85%;
     height: 50px;
     border-radius: 5px;
     color: var(--gray) !important;
@@ -21,7 +21,7 @@
     transform: rotate(45deg);
     position: absolute;
     top: 15%;
-    right: 16%;
+    right: 9%;
 }
 .chat-input.svg-hover > svg:hover { color: var(--main-color); }
 

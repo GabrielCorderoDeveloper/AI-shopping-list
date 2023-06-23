@@ -1,0 +1,6 @@
+div.task-container {
+    width: 100%;
+    background-color: var(--secondary-color);
+    min-height: 200px;
+    border-radius: 5px;
+}

@@ -6,6 +6,9 @@ import ChatContainer from './components/ChatContainer';
 import AppNavbar from './components/AppNavbar';
 import { useState, useEffect } from 'react';
 import Instructions from './components/instructions';
+import TasksContainer from './components/TasksContainer';
+import SavedContainer from './components/SavedContainer';
+import RecipeContainer from './components/RecipeContainer';
 
 
 function App() {
@@ -28,12 +31,15 @@ function App() {
       <AppNavbar/>
         {/* {showComponent && <Animation />} */}
 
-      <div className='main-container '>
+      <div className='main-container'>
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>
         <Instructions/>
-        <div className='tasks-container'></div>
-        <div className='saved-container'></div>
-        <div className='recipe-container'></div>
+
+        <TasksContainer/>
+        <SavedContainer/>
+        <RecipeContainer/>
+
+        <div className='bottom-spacing'></div>
       </div>
 
         <Footer />

@@ -1,0 +1,6 @@
+div.saved-container {
+    width: 100%;
+    background-color: var(--secondary-color);
+    min-height: 100px;
+    border-radius: 5px;
+}

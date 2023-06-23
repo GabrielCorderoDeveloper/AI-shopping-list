@@ -7,11 +7,6 @@
 html {
   font-size: 62.5%; /*1? Each rem is equal to 10px*/
 }
-.main-container {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-}
 
 /*1? Custom colors */ /*The colors are also impremented on bootstrap*/
 :root {
@@ -23,5 +18,22 @@ html {
   --main-color: #FFA34E;
   --secondary-color: #DEDAD1;
   --cool-orange: #E85130;
+}
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 75vw;
+}
+.bottom-spacing {
+  height: 100px;
+}
+
+
+/*~ Phone variant <-----------------------------------------------------------------------*/
+@media (max-width: 600px) {
+  .main-container {
+    width: 90vw;
+  }
 }
