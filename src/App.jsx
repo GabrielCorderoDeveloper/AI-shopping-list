@@ -1,5 +1,6 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import '../css/main.min.css'; //Custom version of BootStrap
 import Animation from './components/Animation';
 import Footer from './components/Footer';
 import ChatContainer from './components/ChatContainer';
