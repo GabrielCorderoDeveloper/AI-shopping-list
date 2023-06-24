@@ -58,11 +58,6 @@
     }
 }
 
-/*~ Tablet variant <-----------------------------------------------------------------------*/
-@media (max-width: 820px) {
-
-}
-
 /*~ Phone variant <-----------------------------------------------------------------------*/
 @media (max-width: 600px) {
     .chat-input > input{
@@ -70,7 +65,7 @@
         padding: 0px 60px 0px 20px;
     }
     .chat-input > svg {
-        right: 8%;
+        right: 9%;
         bottom: 37%;
     }
     .loading-animation {
@@ -79,10 +74,3 @@
 }
 
 
-/*~ Small Phone variant <-----------------------------------------------------------------------*/
-@media (max-width: 300px) {
-    .chat-input > svg {
-        right: 10%;
-        bottom: 46%;
-    }
-}
