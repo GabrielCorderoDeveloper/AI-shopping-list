@@ -48,7 +48,6 @@ function App() {
 
   async function handleSendChat(inputValue) {
     if(animation == true || inputValue.length == 0) return;
-
     setAnimation(true)
     await tasksGpt(inputValue);
   };
@@ -69,7 +68,6 @@ function App() {
       The message you will provide me will be inserted in a JS variable and the code will crash unless you only and exclusively provide the inside of a javascript object.
       `
     }
-
     let apiMessage = { role: 'user', content: `The message you will provide me will be inserted in a JS variable and the code will crash unless you only and exclusively provide me with the inside of a javascript object containing the ingredients of: ${inputValue}.
     example [
       { "id": 1, "name": "Bread", "complete": false },
@@ -79,14 +77,12 @@ function App() {
       { "id": 5, "name": "Lettuce", "complete": false },
       { "id": 6, "name": "Tomato", "complete": false }
     ]`};
-
     const apiRequestBody = {
       'model': 'gpt-3.5-turbo',
       'messages': [
         systemMessage,  apiMessage,
       ]
     }
-
   await fetch('https://api.openai.com/v1/chat/completions', {
   method: "POST",
   headers: {
@@ -105,6 +101,7 @@ function App() {
     const cleanResult = extractIngredients(data.choices[0].message.content)
 
     setTodos(cleanResult) //! <----------------------
+    recipeGpt(cleanResult)
     console.log(cleanResult)
   })
   .catch((error) => {
@@ -112,17 +109,60 @@ function App() {
     console.log(error);
   });
 }
-
 function extractIngredients(input) {
-  // Find the index of the first '[' character
   const startIndex = input.indexOf('[');
-  // Find the index of the last ']' character
   const endIndex = input.lastIndexOf(']');
-  // Extract the substring containing the array of objects
   const extractedString = input.slice(startIndex, endIndex + 1);
-  // Parse the extracted string as JSON and return the result
   return JSON.parse(extractedString);
 }
+
+
+async function recipeGpt(inputValue) {
+  setRecipeAnimation(true)
+
+  function getNames(array) {
+    return array.map(obj => obj.name).join(', ');
+  }
+  const namesString = getNames(inputValue);
+
+  const systemMessage = {
+    role: 'system',
+    content: `Act like you are a professional chef with huge expertise in recipes. You will be provided with ingredients and you will give me a step by step recipe. `
+  }
+
+  let apiMessage = { role: 'user', content: `ingresients: ${namesString}`};
+
+  const apiRequestBody = {
+    'model': 'gpt-3.5-turbo',
+    'messages': [
+      systemMessage,  apiMessage,
+    ]
+  }
+
+await fetch('https://api.openai.com/v1/chat/completions', {
+method: "POST",
+headers: {
+  "Authorization": "Bearer " + API_KEY,
+  "Content-Type": "application/json"
+},
+body: JSON.stringify(apiRequestBody)
+})
+.then((data) => {
+  return data.json();
+})
+.then((data) => {
+  setRecipeAnimation(false)
+
+  console.warn(data.choices[0].message.content);
+  const cleanResult = data.choices[0].message.content;
+  setRecipeText(`${cleanResult}`) //! <----------------------
+})
+.catch((error) => {
+  // if it gets an error
+  console.log(error);
+});
+}
+
 
   return (
     <>

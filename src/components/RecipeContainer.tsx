@@ -15,7 +15,7 @@ const RecipeContainer = ({ recipeAnimation, recipeText }) => {
         <p className='text-center mt-2 mb-4'>Recipe</p>
         <hr />
 
-            <p className='mt-2 pb-2 body-p'>{recipeText}</p>
+            <p className='mt-3 pb-3 body-p'>{recipeText}</p>
         </div>
     </>
   )
