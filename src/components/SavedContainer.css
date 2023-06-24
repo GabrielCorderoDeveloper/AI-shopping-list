@@ -3,4 +3,15 @@ div.saved-container {
     background-color: var(--secondary-color);
     min-height: 100px;
     border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p.empty-p {
+    font-size: 2rem;
+    font-weight: 700;
+    width: 240px;
+    text-align: center;
 }

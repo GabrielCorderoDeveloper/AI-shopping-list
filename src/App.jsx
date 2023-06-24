@@ -10,11 +10,14 @@ import Instructions from './components/instructions';
 import TasksContainer from './components/TasksContainer';
 import SavedContainer from './components/SavedContainer';
 import RecipeContainer from './components/RecipeContainer';
+const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
   const [animation, setAnimation] = useState(false);
   const [recipeAnimation, setRecipeAnimation] = useState(false);
+  const [recipeText, setRecipeText] = useState('');
+  const [recipe, setRecipe] = useState({});
 
   const [todos, setTodos] = useState([{
     id: 1, name: 'Follow Gabriel_coder47 on instagram', complete: false
@@ -43,8 +46,83 @@ function App() {
       }, 2600);
   }, []);
 
-  const handleSendChat = () => {
+  async function handleSendChat(inputValue) {
+    if(animation == true || inputValue.length == 0) return;
+
+    setAnimation(true)
+    await tasksGpt(inputValue);
   };
+
+  async function tasksGpt(inputValue) {
+    const systemMessage = {
+      role: 'system',
+      content: `
+      You are a machine that only has onw way of comunication with the world and that is through javascript objects that contain id, name, and complete, which will be false.
+      You can't speak human language and you have zero knoledge of undertanding of it You will receive the name of a recipe, and you will provide all the ingredients needed in the form of Javascript objects. example: [
+        { "id": 1, "name": "Bread", "complete": false },
+        { "id": 2, "name": "Butter", "complete": false },
+        { "id": 3, "name": "Cheese", "complete": false },
+        { "id": 4, "name": "Ham", "complete": false },
+        { "id": 5, "name": "Lettuce", "complete": false },
+        { "id": 6, "name": "Tomato", "complete": false }
+      ]
+      The message you will provide me will be inserted in a JS variable and the code will crash unless you only and exclusively provide the inside of a javascript object.
+      `
+    }
+
+    let apiMessage = { role: 'user', content: `The message you will provide me will be inserted in a JS variable and the code will crash unless you only and exclusively provide me with the inside of a javascript object containing the ingredients of: ${inputValue}.
+    example [
+      { "id": 1, "name": "Bread", "complete": false },
+      { "id": 2, "name": "Butter", "complete": false },
+      { "id": 3, "name": "Cheese", "complete": false },
+      { "id": 4, "name": "Ham", "complete": false },
+      { "id": 5, "name": "Lettuce", "complete": false },
+      { "id": 6, "name": "Tomato", "complete": false }
+    ]`};
+
+    const apiRequestBody = {
+      'model': 'gpt-3.5-turbo',
+      'messages': [
+        systemMessage,  apiMessage,
+      ]
+    }
+
+  await fetch('https://api.openai.com/v1/chat/completions', {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer " + API_KEY,
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(apiRequestBody)
+  })
+  .then((data) => {
+    return data.json();
+  })
+  .then((data) => {
+    setAnimation(false);
+
+    console.warn(data.choices[0].message.content);
+    const cleanResult = extractIngredients(data.choices[0].message.content)
+
+    setTodos(cleanResult) //! <----------------------
+    console.log(cleanResult)
+  })
+  .catch((error) => {
+    // if it gets an error
+    console.log(error);
+  });
+}
+
+function extractIngredients(input) {
+  // Find the index of the first '[' character
+  const startIndex = input.indexOf('[');
+  // Find the index of the last ']' character
+  const endIndex = input.lastIndexOf(']');
+  // Extract the substring containing the array of objects
+  const extractedString = input.slice(startIndex, endIndex + 1);
+  // Parse the extracted string as JSON and return the result
+  return JSON.parse(extractedString);
+}
 
   return (
     <>
@@ -56,8 +134,8 @@ function App() {
         <Instructions/>
 
         <TasksContainer todos={todos} toggleTodo={toggleTodo} clearTodos={clearTodos}/>
-        <SavedContainer/>
-        <RecipeContainer recipeAnimation={recipeAnimation}/>
+        <SavedContainer recipe={recipe} setRecipe={setRecipe}/>
+        <RecipeContainer recipeAnimation={recipeAnimation} recipeText={recipeText}/>
 
         <div className='bottom-spacing'></div>
       </div>
@@ -65,6 +143,6 @@ function App() {
         <Footer />
     </>
   )
-}
+};
 
 export default App
