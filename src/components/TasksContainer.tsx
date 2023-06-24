@@ -35,6 +35,7 @@ const TaskCounter = ({ todos }) => {
   let totalTasks = todos.length;
   let completedTasks = todos.filter(todo => todo.complete).length;
   let now = Math.floor((completedTasks / totalTasks) * 100);
+  if (!completedTasks) now = 0;
 
   // La barra de progreso mostrará cuántas tareas has completado
   return (

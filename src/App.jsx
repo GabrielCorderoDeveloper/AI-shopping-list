@@ -21,10 +21,7 @@ function App() {
 
   const [todos, setTodos] = useState([{
     id: 1, name: 'Follow Gabriel_coder47 on instagram', complete: false
-  },
-  {
-    id: 2, name: 'Follow Gabriel_coder47 on instagram', complete: false
-  }]);
+  },]);
 
   function toggleTodo(id) {
     const newTodos = [...todos]
