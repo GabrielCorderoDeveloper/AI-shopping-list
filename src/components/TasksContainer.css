@@ -63,13 +63,13 @@ input.check {
     padding: 0 10px;
     font-size: 1.6rem;
     font-weight: 600;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
     border-radius: 5px;
     color: white;
     border: none;
     transition: 0.3s;
 }
-.save-button:hover {
+.save-button:not(.non):hover {
     width: 160px;
     transform: translateX(20px);
     background-color: var(--cool-orange);

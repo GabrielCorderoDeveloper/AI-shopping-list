@@ -52,14 +52,14 @@ const TaskCounter = ({ todos }) => {
 };
 
 // Este es el botón para eliminar las tareas marcadas
-const Buttons = ({ clearTodos }) => {
+const Buttons = ({ clearTodos, todos }) => {
   return (
     <div className='mt-5 mb-4 d-flex justify-content-between'>
       <div className='ms-3 remove' onClick={clearTodos}>
         <BsTrash size="25px" />
       </div>
 
-      <button className='me-3 save-button' onClick={clearTodos}>
+      <button className={`me-3 save-button btn btn-${todos.length > 0 ? "mainColor" : "gray non" }`} onClick={clearTodos}>
         Save this list
       </button>
     </div>
@@ -75,7 +75,7 @@ const TasksContainer = ({ todos, toggleTodo, clearTodos }) => {
       </div>
 
       <TaskList todos={todos} toggleTodo={toggleTodo} />
-      <Buttons clearTodos={clearTodos} />
+      <Buttons todos={todos} clearTodos={clearTodos} />
     </div>
   );
 };

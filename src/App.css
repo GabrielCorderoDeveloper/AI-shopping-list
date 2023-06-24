@@ -23,7 +23,7 @@ html {
   --secondary-color: #DEDAD1;
   --cool-orange: #E85130;
 }
-a {
+a, button {
   user-select: none;
 }
 

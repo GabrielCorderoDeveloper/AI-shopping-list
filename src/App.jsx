@@ -20,7 +20,7 @@ function App() {
   const [recipe, setRecipe] = useState({});
 
   const [todos, setTodos] = useState([{
-    id: 1, name: 'Follow Gabriel_coder47 on instagram', complete: false
+    id: 1, name: 'Project created by Gabriel Cordero', complete: false
   },]);
 
   function toggleTodo(id) {
