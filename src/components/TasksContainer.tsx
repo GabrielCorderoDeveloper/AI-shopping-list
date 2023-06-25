@@ -66,7 +66,7 @@ const Buttons = ({ clearTodos, saveList, recipe, todos }) => {
 //2? Tasks container ----------------------------------------------->
 const TasksContainer = ({ todos, toggleTodo, clearTodos, saveList, recipe }) => {
   return (
-    <div className='task-container mb-md-5 mb-4'>
+    <div className='task-container mt-2 mb-md-5 mb-4'>
       <div className='task-counter'>
         <TaskCounter todos={todos}/> 
       </div>

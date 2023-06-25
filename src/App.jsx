@@ -106,12 +106,10 @@ function App() {
   .then((data) => {
     setAnimation(false);
 
-    console.warn(data.choices[0].message.content);
     const cleanResult = extractIngredients(data.choices[0].message.content)
 
     setTodos(cleanResult) //! <----------------------
     recipeGpt(cleanResult)
-    console.log(cleanResult)
   })
   .catch((error) => {
     // if it gets an error
@@ -164,12 +162,12 @@ body: JSON.stringify(apiRequestBody)
 .then((data) => {
   setRecipeAnimation(false)
 
-  console.warn(data.choices[0].message.content);
   const cleanResult = data.choices[0].message.content;
   setRecipeText(`${cleanResult}`) //! <----------------------
 })
 .catch((error) => {
   // if it gets an error
+  recipeGpt(cleanResult)
   console.log(error);
 });
 }

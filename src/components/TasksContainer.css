@@ -5,7 +5,6 @@ div.task-container {
     border-radius: 5px;
     padding: 0 3%;
 }
-
 input[type='checkbox'] {
     accent-color: var(--main-color);
 }
@@ -15,7 +14,6 @@ input.check {
     margin-left: 5px;
     transform: translateY(4px);
 }
-
 .todo-item {
     margin: 0 6px;
     padding: 5px;
@@ -29,25 +27,21 @@ input.check {
     opacity: 0.6;
     margin: 1px;
 }
-
 .todo-text {
     padding-left: 10px;
     color: var(--light-black);
     font-size: 1.6rem;
     font-weight: bolder;
 }
-
 .task-counter {
     width: 98%;
     margin: 0 auto;
 }
-  
 .progress-bar-inside {
     font-weight: bolder;
     font-size: 1.6rem;
     background-color: var(--gray);
 }
-
 .remove svg{
     transition: 0.3s;
 }
@@ -56,8 +50,6 @@ input.check {
     transform: rotate(20deg);
     cursor: pointer;
 }
-
-
 .save-button {
     width: 120px;
     height: 35px;
