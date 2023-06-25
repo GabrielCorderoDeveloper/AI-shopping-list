@@ -54,6 +54,7 @@ input.check {
 .remove svg:hover {
     color: var(--cool-orange);
     transform: rotate(20deg);
+    cursor: pointer;
 }
 
 

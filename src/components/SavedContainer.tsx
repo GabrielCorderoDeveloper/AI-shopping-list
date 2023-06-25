@@ -11,7 +11,7 @@ const SavedContainer = ({recipe, setRecipe}) => {
       ? 
       <div className='saved-item-container'>
         {recipe.map((recipeItem) => (
-          <div  key={recipeItem.number}>
+          <div className='save-animation' key={recipeItem.number}>
             <div className={`saved-item ${recipeItem.number == 2 || recipeItem.number == 4 ? "bg-coolOrange" : 'bg-lightBlack'} `}>
               <div>{recipeItem.number}</div>
             </div>
