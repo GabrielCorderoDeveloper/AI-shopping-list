@@ -9,6 +9,8 @@
     max-width: 350px;
     margin: auto;
     position: relative;
+    min-height: 100px;
+    min-width: 230px;
 }
 
 .info-container svg{

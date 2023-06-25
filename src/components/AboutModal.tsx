@@ -12,44 +12,26 @@ const AboutModal = ({ showModal, handleCloseModal }) => {
       </Modal.Header>
       <Modal.Body>
         <p>
-          As a front-end developer, I needed to create projects to
-          improve my skills and to show others what I'm capable of. I had many
-          ideas of what my next project would be, but I wanted to create
-          something useful, something that makes the lives of others at least
-          slightly better.
+        I created this project to push myself as a developer and create something useful and impactful. This project shows what I can build as a front-end developer.
         </p>
         <p>
-          AI Personal Life Coach© is a personal coach that will adapt itself to
-          fit your needs. The best and fastest way to make progress towards a
-          goal is to have someone that show us the way. A good coach gives you
-          advices however and excellent coach will reach out to you to see how
-          are you doing and make sure that you are in the right path.
-        </p>
-        <p>
-          A coach could be really expensive, especially if that coach is really
-          good. I wanted to create a coach that is completely FREE and
-          accessible to everyone. It doesn't matter where you life or what is
-          your income, AI Personal Life Coach© is accessible to everyone, so
-          don't waste time and make your life{" "}
-          <i>
-            <b>incredible!</b>
-          </i>
+        AI Shopping List has the capability to help you in your day-to-day life by facilitating the process of shopping by breaking down all the ingredients needed to make any food you want. It also helps with the process of cooking by providing a detailed step-by-step recipe that is easy to follow and execute.
         </p>
         <br />
         <br />
 
         <h1 className='minus'>Project design</h1>
-        <p>The design of AI Personal Life Coach© was made using figma.</p>
+        <p>The design of AI Shopping List was made using figma.</p>
         <a
           className="modal-link font-weight-bold"
-          href="https://www.figma.com/proto/IrDQzLAK2ISdbWRbZchXsP/IA-Personal-life-coach?node-id=12-3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=12%3A3"
+          href="https://www.figma.com/proto/D6Vn2XxJnVNWPLr0QtY5sB/AI-Shopping-List?type=design&node-id=5-15&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5%3A44"
           target="_blank"
         >
           Figma preview
         </a>{' '}
         <a
           className="modal-link font-weight-bold px-3"
-          href="https://www.figma.com/file/IrDQzLAK2ISdbWRbZchXsP/IA-Personal-life-coach?node-id=0%3A1&t=QpoxV3pDldxajCVM-1"
+          href="https://www.figma.com/file/D6Vn2XxJnVNWPLr0QtY5sB/AI-Shopping-List?type=design&node-id=0%3A1&mode=design&t=Y1inG55jTNdXIvH9-1"
           target="_blank"
         >
           Figma full project
@@ -59,7 +41,7 @@ const AboutModal = ({ showModal, handleCloseModal }) => {
         <br />
 
         <h1 className='minus'>How it works?</h1>
-        <p>The technologies and libraries used in this project:</p>
+        <p>It works using the ChatGpt API. When the user sends a text, Chatgpt will use its knowledge of cooking to break down all the ingredients of that food and send back a text. That text will be cleaned, and anything unsuseful will be removed. After adding the list of ingredients, Chatgpt will receive those ingredients and make a detailed step-by-step recipe based on those ingredients.</p>
         <br />
         <br />
 
@@ -71,11 +53,13 @@ const AboutModal = ({ showModal, handleCloseModal }) => {
           <li>React</li>
           <li>React Icons</li>
           <li>Bootstrap 5</li>
-          <li>Typescript</li>
-          <li>Axios</li>
-          <li>Google ReCAPTCHA</li>
+          <li>Sass</li>
+          <li>JavaScript</li>
           <li>HTML</li>
           <li>CSS</li>
+          <li>Axios</li>
+          <li>Google ReCAPTCHA</li>
+          <li>React simple typewriter</li>
         </ul>
 
       </Modal.Body>
