@@ -8,7 +8,6 @@ const Todo = ({ todo, toggleTodo }) => {
     toggleTodo(todo.id);
   }
 
-  // Los elementos de la tarea se renderizarán
   return (
     <div className='todo-item'>
       <label>
@@ -37,7 +36,6 @@ const TaskCounter = ({ todos }) => {
   let now = Math.floor((completedTasks / totalTasks) * 100);
   if (!completedTasks) now = 0;
 
-  // La barra de progreso mostrará cuántas tareas has completado
   return (
     <ProgressBar
       variant='mainColor'
@@ -51,23 +49,22 @@ const TaskCounter = ({ todos }) => {
   );
 };
 
-// Este es el botón para eliminar las tareas marcadas
-const Buttons = ({ clearTodos, todos }) => {
+const Buttons = ({ clearTodos, saveList, recipe, todos }) => {
   return (
     <div className='mt-5 mb-4 d-flex justify-content-between'>
       <div className='ms-3 remove' onClick={clearTodos}>
         <BsTrash size="25px" />
       </div>
 
-      <button className={`me-3 save-button btn btn-${todos.length > 0 ? "mainColor" : "gray non" }`} onClick={clearTodos}>
+      <button className={`me-3 save-button btn btn-${todos.length > 0 && recipe.length < 4  ? "mainColor" : "gray non" }`} onClick={saveList}>
         Save this list
       </button>
     </div>
   );
 };
 
-//2? Este es el componente del contenedor de tareas ----------------------------------------------->
-const TasksContainer = ({ todos, toggleTodo, clearTodos }) => {
+//2? Tasks container ----------------------------------------------->
+const TasksContainer = ({ todos, toggleTodo, clearTodos, saveList, recipe }) => {
   return (
     <div className='task-container mb-md-5 mb-4'>
       <div className='task-counter'>
@@ -75,7 +72,7 @@ const TasksContainer = ({ todos, toggleTodo, clearTodos }) => {
       </div>
 
       <TaskList todos={todos} toggleTodo={toggleTodo} />
-      <Buttons todos={todos} clearTodos={clearTodos} />
+      <Buttons todos={todos} clearTodos={clearTodos} saveList={saveList} recipe={recipe}/>
     </div>
   );
 };

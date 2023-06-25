@@ -17,7 +17,7 @@ function App() {
   const [animation, setAnimation] = useState(false);
   const [recipeAnimation, setRecipeAnimation] = useState(false);
   const [recipeText, setRecipeText] = useState('');
-  const [recipe, setRecipe] = useState({});
+  const [recipe, setRecipe] = useState([]);
 
   const [todos, setTodos] = useState([{
     id: 1, name: 'Project created by Gabriel Cordero', complete: false
@@ -34,6 +34,18 @@ function App() {
   function clearTodos() {
     const newTodos = todos.filter(todo => !todo.complete)
     setTodos(newTodos)
+  }
+
+  function saveList() {
+    if (!todos.length > 0 || recipe.length > 3) return;
+
+    const newRecipe = {
+      "number": recipe.length + 1,
+      "name": `Recipe ${recipe.length + 1}`,
+      "list": todos,
+      "recipe": recipeText
+    }
+    setRecipe([...recipe, newRecipe])
   }
 
     // After 2.5S the animation component will not be showed
@@ -103,8 +115,6 @@ function App() {
   })
   .catch((error) => {
     // if it gets an error
-
-
     setAnimation(true)
     tasksGpt(inputValue);
     console.log(error);
@@ -174,7 +184,7 @@ body: JSON.stringify(apiRequestBody)
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>
         <Instructions/>
 
-        <TasksContainer todos={todos} toggleTodo={toggleTodo} clearTodos={clearTodos}/>
+        <TasksContainer todos={todos} toggleTodo={toggleTodo} clearTodos={clearTodos} saveList={saveList} recipe={recipe}/>
         <SavedContainer recipe={recipe} setRecipe={setRecipe}/>
         <RecipeContainer recipeAnimation={recipeAnimation} recipeText={recipeText}/>
 
