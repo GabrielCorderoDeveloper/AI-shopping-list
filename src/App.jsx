@@ -103,6 +103,10 @@ function App() {
   })
   .catch((error) => {
     // if it gets an error
+
+
+    setAnimation(true)
+    tasksGpt(inputValue);
     console.log(error);
   });
 }
