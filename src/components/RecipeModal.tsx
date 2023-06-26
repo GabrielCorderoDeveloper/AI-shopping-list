@@ -15,7 +15,11 @@ const RecipeModal = ({ recipe, showContact, handleCloseContact, selectedRecipe, 
     };
 
     const deleteRecipe = () => {
-        
+        const objectDeleteing = { name: recipe[selectedRecipe]?.name};
+        const newArray = recipe.filter(object => object.name !== objectDeleteing.name);
+
+        setRecipe(newArray)
+        handleCloseContact();
     };
 
   return (
