@@ -37,6 +37,11 @@ a, button {
   height: 100px;
 }
 
+input.form-control:focus, textarea.form-control:focus {
+  border-color: var(--main-color);  
+  box-shadow: var(--main-color) inset -2px 2px 4px, var(--main-color) inset 2px -2px 4px  ; 
+}
+
 
 /*~ Phone variant <-----------------------------------------------------------------------*/
 @media (max-width: 600px) {
