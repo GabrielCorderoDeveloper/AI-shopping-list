@@ -176,14 +176,14 @@ body: JSON.stringify(apiRequestBody)
   return (
     <>
       <AppNavbar/>
-        {showComponent && <Animation />}
+        {/* {showComponent && <Animation />} */}
 
       <div className='main-container'>
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>
         <Instructions/>
 
         <TasksContainer todos={todos} toggleTodo={toggleTodo} clearTodos={clearTodos} saveList={saveList} recipe={recipe}/>
-        <SavedContainer recipe={recipe} setRecipe={setRecipe}/>
+        <SavedContainer recipe={recipe} setRecipe={setRecipe} setTodos={setTodos} setRecipeText={setRecipeText}/>
         <RecipeContainer recipeAnimation={recipeAnimation} recipeText={recipeText}/>
 
         <div className='bottom-spacing'></div>

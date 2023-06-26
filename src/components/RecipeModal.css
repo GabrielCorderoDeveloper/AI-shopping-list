@@ -1,0 +1,30 @@
+
+  div.modal-body > p {
+    line-height: 100%;
+    margin-top: 30px;
+  }
+  .minus {
+    margin-bottom: -10px;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 2.2rem; /* 20px */
+  }
+  .buttons button  {
+    padding: 3px 35px;
+  }
+  .buttons button > p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    transform: translateY(5px);
+  }
+  .recipe-text {
+    line-height: 100%;
+    width: 90%;
+    margin: auto;
+    font-size: 1.4rem;
+    color: var(--ligth-black);
+    font-weight: 800;
+    white-space: pre-wrap;
+    overflow: hidden;
+  }
