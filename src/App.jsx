@@ -185,11 +185,10 @@ body: JSON.stringify(apiRequestBody)
 });
 }
 
-
   return (
     <>
       <AppNavbar/>
-        {/* {showComponent && <Animation />} */}
+        {showComponent && <Animation />}
 
       <div className='main-container'>
         <ChatContainer onSendChat={handleSendChat} animation={animation}/>

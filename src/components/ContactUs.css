@@ -40,5 +40,5 @@
   button.contact > p {
     color: white;
     font-weight: bold;
-    transform: translateY(1px);
+    transform: translateY(5px);
   }
