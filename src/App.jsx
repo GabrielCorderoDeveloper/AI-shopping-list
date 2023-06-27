@@ -48,9 +48,18 @@ function App() {
     setRecipe([...recipe, newRecipe])
   }
 
+//  2? Saving and loading recipes --------------------------------------------->
   useEffect(() => {
-    console.log(recipe);
-  }, [recipe]);
+    const detect = localStorage.getItem('aishoppinglist.recipe')
+    if (detect) {
+      const storedRecipe = JSON.parse(localStorage.getItem('aishoppinglist.recipe') || [] );
+    if (storedRecipe) setRecipe(storedRecipe)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('aishoppinglist.recipe', JSON.stringify(recipe))
+  }, [recipe])
 
     // After 2.5S the animation component will not be showed
     useEffect(() => {

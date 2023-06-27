@@ -37,13 +37,14 @@ p.empty-p {
     font-weight: 600;
     cursor: pointer;
 }
-
 .saved-item-container p {
     font-size: 1.6rem;
     font-weight: 500;
     margin-top: 4px;
     line-height: 90%;
-    transform: translateX(-3px);
+    transform: translateX(-25%);
+    width: 100px;
+    overflow-wrap: break-word;
 }
 .save-animation {
     animation: save-animate 0.5s ease-in-out forwards;
@@ -54,5 +55,30 @@ p.empty-p {
     }
     100% { 
         transform: scale(100%);
+    }
+}
+
+/*~ Tablet variant <-----------------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .saved-item-container p {
+        width: 75px;
+        transform: translateX(-15%);
+    }
+}
+
+/*~ Phone variant <-----------------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .saved-item-container p {
+        width: 50px;
+        transform: translateX(-6%);
+    }
+}
+
+/*~ Small Phone variant <-----------------------------------------------------------------------*/
+@media (max-width: 300px) {
+    .saved-item-container p {
+        width: 40px;
+        font-size: 1.3rem;
+        transform: translateX(9%);
     }
 }

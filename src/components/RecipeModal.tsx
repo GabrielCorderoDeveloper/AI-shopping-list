@@ -32,6 +32,12 @@ const RecipeModal = ({ recipe, showContact, handleCloseContact, selectedRecipe, 
         handleCloseContact();
     };
 
+    const handleInputKeyDown = (event: { keyCode: number; }) => {
+      if (event.keyCode == 13 ) { //13 is the code for Enter
+        setCurrentRecipe();
+      }
+    };
+
   return (
     <Modal
       className="contact"
@@ -52,6 +58,7 @@ const RecipeModal = ({ recipe, showContact, handleCloseContact, selectedRecipe, 
               className="form-control rounded-4 mb-4"
               placeholder={recipe[selectedRecipe]?.name}
               onChange={onNameChange}
+              onKeyDown={handleInputKeyDown}
             />
           </div>
           <div>
