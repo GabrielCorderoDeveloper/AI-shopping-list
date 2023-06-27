@@ -48,6 +48,10 @@ function App() {
     setRecipe([...recipe, newRecipe])
   }
 
+  useEffect(() => {
+    console.log(recipe);
+  }, [recipe]);
+
     // After 2.5S the animation component will not be showed
     useEffect(() => {
       setTimeout(() => {

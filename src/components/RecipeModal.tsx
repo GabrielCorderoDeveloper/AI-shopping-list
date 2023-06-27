@@ -1,11 +1,21 @@
-import { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './RecipeModal.css';
 
 const RecipeModal = ({ recipe, showContact, handleCloseContact, selectedRecipe, setRecipe, setTodos, setRecipeText }) => {
     
-    const onNameChange = () => {
-    //  setRecipe(recipe[selectedRecipe]?.name)
+    const onNameChange = (event) => {
+      // recipe[selectedRecipe]?.name = event.target.value;
+      const updatedRecipe = recipe.map((item) => {
+        if (item.number === selectedRecipe + 1) {
+          return {
+            ...item,
+            name: event.target.value // Replace 'New Recipe Name' with the desired new name
+          };
+        }
+        return item;
+      });
+    
+      setRecipe(updatedRecipe);
     };
     
     const setCurrentRecipe = () => {
