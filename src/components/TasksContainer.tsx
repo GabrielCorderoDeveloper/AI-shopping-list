@@ -2,6 +2,7 @@ import React from 'react';
 import './TasksContainer.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { BsTrash } from "react-icons/bs";
+import { Typewriter } from 'react-simple-typewriter';
 
 const Todo = ({ todo, toggleTodo }) => {
   function handleTodoClick() {
@@ -17,7 +18,14 @@ const Todo = ({ todo, toggleTodo }) => {
           checked={todo.complete}
           onChange={handleTodoClick}
         />
-        <span className='todo-text'>{todo.name}</span>
+        <span className='todo-text'>
+        <Typewriter
+            words={[
+              `${todo.name}`,
+            ]}
+            typeSpeed={50}
+            deleteSpeed={999999999}
+          /></span>
       </label>
       <hr className='todo-hr'/>
     </div>
