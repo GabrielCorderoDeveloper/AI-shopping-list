@@ -53,7 +53,7 @@ const ContactUs = ({ showContact, handleCloseContact }) => {
           // console.log(error);
           setMessage({ /*//1? Error message*/
           class: 'alert-danger',
-          text: 'Sorry, something went wrong. Please try again.'
+          text: 'Sorry, something went wrong. Please try again or contact me at'
         })
         }
       }
@@ -105,7 +105,7 @@ const ContactUs = ({ showContact, handleCloseContact }) => {
             {/*//!Alert---------> */}
             {message && (
               <div className={`alert ${message.class}`} role="alert">
-                {message.text}
+                {message.text} { message.class === 'alert-danger' ? <a href="mailto:gabriel.cordero.developer@gmail.com">gabriel.cordero.developer@gmail.com</a> : ''}
               </div>
             )}
             <label htmlFor="name">Name</label>

@@ -3,6 +3,12 @@
     margin: 0 auto;
     font-size: 2.2rem; /* 22px */
   }
+  .modal.contact a{
+    color: var(--dark-gray);
+  }
+  .modal.contact a:hover{
+    color: var(--cool-orange);
+  }
   div.modal-header {
     background-color: var(--main-color);
     color: var(--white);
